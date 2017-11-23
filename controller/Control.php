@@ -132,34 +132,7 @@ class Controller {
       $sucesso = false;
       try {
         echo $name.$qtdPages;
-        /*if ($nome == "" || $email == "") throw new Exception('Erro');
-        $contato = new Contato(0, $nome, $email);
 
-        //consulta o e-mail no banco
-        $result = $this->factory->buscar($contato->getEmail());
-
-        // se o resultado for igual a 0 itens, então salva contato
-        if (count($result) == 0) {
-          $sucesso = $this->factory->salvar($contato);
-        }*/
-
-        /*if ($sucesso) {
-          $msg = '<div class="alert alert-success" role="alert">O contato ' . $contato->getNome() . ' (' . $contato->getEmail(). ') foi cadastrado com sucesso!</div>';
-        }
-        else if (!$sucesso && count($result) > 0) {
-          $msg = '<div class="alert alert-warning" role="alert">O contato n&atilde;o foi adicionado. E-mail j&aacute; existente na agenda!</div>';
-        }
-        else {
-          $msg = '<div class="alert alert-danger" role="alert">O contato n&atilde;o foi adicionado. Tente novamente mais tarde!</div>';
-        }
-
-        unset($nome);
-        unset($email);
-
-        $refresh = 1;
-		    $adress = '?op=novo';
-
-        require 'View/mensagem.php';*/
       }
       catch (Exception $e) {
         if ($name == "") {
@@ -169,44 +142,9 @@ class Controller {
           $msg = "O campo de quantidade de páginas deve ser preenchido!";
         }
         echo $msg;
-
-        /*$refresh = 1;
-		    $adress = '?op=novo';
-        require 'View/mensagem.php';*/
       }
     }
-  }
-
-
-
-  public function lista() {
-    $result = $this->factory->listar();
-    require 'View/lista.php';
-  }
-
-  public function remove() {
-  	$id = $_GET['id'];
-
-    $result = $this->factory->remove($id);
-
-  	if($result){
-      $refresh = 1;
-  	  $adress = '?op=lista';
-
-  	  $msg = '<div class="alert alert-success" role="alert">O contato foi excluido com sucesso!</div>';
-  	  require 'View/mensagem.php';
-  	}
-    else{
-	     $msg = '<div class="alert alert-danger" role="alert">O contato n&atilde;o foi excluido. Tente novamente mais tarde!</div>';
-       require 'View/mensagem.php';
-    }
-  }
-  public function out() {
-    session_start('EmailContato');
-    session_destroy();
-
-    require 'View/index.php';
-  }
+  }  
 }
 
 ?>
