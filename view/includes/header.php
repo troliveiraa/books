@@ -29,16 +29,23 @@ tr:nth-child(even) {
 <!-- Documentation extras -->
 <link href="view/css/docs.min.css" rel="stylesheet">
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
 
 </head>
 <body>
 	<nav class="navbar navbar-dark bg-primary navbar-fixed-top" style="margin-bottom:20px;">
-		<h1 class="navbar-brand mb-0">BOOKS</h1>
+		<h1 class="navbar-brand mb-0">
+			BOOKS
+		</h1>
     <ul class="nav navbar-nav">
 			<li class="nav-item active">
 				<a class="nav-link" href="?op=sair">
 					Inicio <span class="sr-only">(current)</span>
 				</a>
+      </li>
+			<li class="nav-item">
+				<a class="nav-link" href="?op=pageListBooks">Meus livros</a>
       </li>
       <li class="nav-item">
 				<a class="nav-link" href="?op=pageNewBook">Registrar livro</a>
