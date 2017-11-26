@@ -17,7 +17,6 @@
       $qtdPages = $param->getQtdPages();
       $image    = $param->getImage();
 
-      echo $name.$qtdPages.$image;
 
       $sql = "INSERT INTO book (name, qtdPages, image) VALUES (:name, :qtdPages, :image)";
       $stmt = $this->db->prepare($sql);
@@ -28,8 +27,6 @@
       $stmt->bindParam(':image', $image, PDO::PARAM_STR);
 
       $stmt->execute();
-
-      var_dump($stmt->rowCount());
 
       // Execute statement
       return $stmt->rowCount();
@@ -68,7 +65,7 @@
 
       $list =  $this->queryRowsToListOfObjects($stmt, "Book");
       return $list;
-      
+
     }
     public function removeBookInBD($param){
 

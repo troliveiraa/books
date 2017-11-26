@@ -12,8 +12,7 @@
 
 
     public function registerNewReminderInBD($param){
-      var_dump($param);
-
+      
       $nameBook = $param->getNameBook();
       $hour     = $param->getHour();
       $days     = $param->getDays();
